@@ -637,8 +637,8 @@ namespace admittance_controller_parameters {
       param = parameters_interface->get_parameter("gravity_compensation.frame.external");
       params_.gravity_compensation_.frame_.external_ = param.as_bool();
       param = parameters_interface->get_parameter("gravity_compensation.CoG.pos");
-      validation_result = gen_param_struct_validators::validate_double_array_len(param, 3);
-      if (validation_result.success()) {
+      if (validate_double_array_len(param, 3).success()
+          && validate_double_array_len(param, 3).success()) {
         params_.gravity_compensation_.CoG_.pos_ = param.as_double_array();
       } else {
         throw rclcpp::exceptions::InvalidParameterValueException(

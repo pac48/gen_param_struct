@@ -7,6 +7,7 @@ import os
 from typing import Callable
 from typeguard import typechecked
 
+
 # class to help minimize string copies
 class Buffer:
     def __init__(self):
@@ -418,12 +419,12 @@ class GenParamStruct:
                                        param_get_effect_true,
                                        param_get_effect_false)
         code_str = validation_sequence("gen_param_struct_validators", "validate_" + defined_type + "_bounds", bounds,
-                                      [code_str],
-                                      param_get_effect_false)
+                                       [code_str],
+                                       param_get_effect_false)
         # add custom validation
         for val in validation:
             code_str = validation_sequence("gen_param_struct_validators", val[0], val[1:], [code_str],
-                                          param_get_effect_false)
+                                           param_get_effect_false)
 
         self.param_get += code_str
 
