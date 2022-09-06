@@ -1,3 +1,6 @@
+# Repository has been relocated to:
+https://github.com/PickNikRobotics/generate_parameter_library
+
 # generate_parameter_library
 This package aims to automate parameter handling within ROS 2. The build script automatically generates a c++ library from a yaml file input. The generated library contains a struct with all parameters as nested fields. Addtional methods are generated, which enable parameter updating.   
 
